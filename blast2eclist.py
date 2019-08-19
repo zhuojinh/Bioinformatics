@@ -20,8 +20,7 @@ with open(argr[2],'r') as ecfile:
 
 with open(argr[1],'r') as tblfile:
     for line in tblfile:
-        line=line.strip()
-        target=line.split('\t')[1].split('|')[1]
+        target=line.strip().split('\t')[1].split('|')[1]
         for single_ec in ec_uniprot:
             if target in single_ec.content():
                 print(single_ec.name())
